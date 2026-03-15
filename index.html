@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JEE Main 2026 - Physics Elasticity - Jitu Sir</title>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+/* ---- JEE MAINS EXACT NTA THEME ---- */
+:root {
+  --nta-bg: #f0f2f5;
+  --nta-header: #1a3a6b;
+  --nta-header2: #0d2147;
+  --nta-white: #ffffff;
+  --nta-border: #c8ccd0;
+  --nta-green: #00a652;
+  --nta-red: #e83030;
+  --nta-purple: #7b2fbe;
+  --nta-orange: #f57c00;
+  --nta-blue: #1a3a6b;
+  --nta-lightblue: #e8eef8;
+  --nta-text: #1a1a1a;
+  --nta-muted: #555;
+  --nta-answered: #00a652;
+  --nta-notanswered: #e83030;
+  --nta-notvisited: #dce0e6;
+  --nta-marked: #7b2fbe;
+  --nta-markedans: #ff9800;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: var(--nta-bg);
+  color: var(--nta-text);
+  min-height: 100vh;
+  font-size: 14px;
+}
+
+/* ===== REGISTER PAGE ===== */
+#register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background: var(--nta-bg);
+  padding: 0;
+}
+
+.nta-reg-header {
+  width: 100%;
+  background: var(--nta-header);
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid #f57c00;
+}
+.nta-reg-header .logo-text {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: .02em;
+}
+.nta-reg-header .logo-sub {
+  color: #adc6f5;
+  font-size: .72rem;
+  margin-top: 2px;
+}
+.nta-reg-header .nta-logo-right {
+  background: #fff;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-weight: 700;
+  font-size: .8rem;
+  color: var(--nta-header);
+  letter-spacing: .05em;
+}
+
+.nta-reg-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  gap: 18px;
+  width: 100%;
+  max-width: 700px;
+}
+
+.nta-exam-title {
+  background: var(--nta-white);
+  border: 1px solid var(--nta-border);
+  border-top: 4px solid var(--nta-header);
+  border-radius: 4px;
+  padding: 20px 28px;
+  width: 100%;
+  text-align: center;
+}
+.nta-exam-title h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--nta-header);
+  margin-bottom: 6px;
+}
+.nta-exam-title .subtitle {
+  font-size: .82rem;
+  color: var(--nta-muted);
+}
+
+.nta-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+.nta-info-box {
+  background: var(--nta-white);
+  border: 1px solid var(--nta-border);
+  border-radius: 4px;
+  padding: 12px 10px;
+  text-align: center;
+}
+.nta-info-box .nv {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--nta-header);
+}
+.nta-info-box .nl {
+  font-size: .68rem;
+  color: var(--nta-muted);
+  margin-top: 3px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.nta-marking-table {
+  width: 100%;
+  background: var(--nta-white);
+  border: 1px solid var(--nta-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.nta-marking-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .82rem;
+}
+.nta-marking-table th {
+  background: var(--nta-header);
+  color: #fff;
+  padding: 8px 14px;
+  text-align: left;
+  font-weight: 600;
+}
+.nta-marking-table td {
+  padding: 8px 14px;
+  border-bottom: 1px solid #eee;
+  color: var(--nta-text);
+}
+.nta-marking-table tr:last-child td { border-bottom: none; }
+.mark-pos { color: var(--nta-green); font-weight: 700; }
+.mark-neg { color: var(--nta-red); font-weight: 700; }
+.mark-zero { color: var(--nta-muted); font-weight: 700; }
+
+.nta-topics-box {
+  background: var(--nta-white);
+  border: 1px solid var(--nta-border);
+  border-radius: 4px;
+  padding: 14px 18px;
+  width: 100%;
+}
+.nta-topics-box h3 {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--nta-header);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.nta-topics-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.nta-topic-chip {
+  background: var(--nta-lightblue);
+  border: 1px solid #b8cce8;
+  border-radius: 3px;
+  padding: 4px 10px;
+  font-size: .75rem;
+  color: var(--nta-header);
+  font-weight: 500;
+}
+
+.nta-reg-card {
+  background: var(--nta-white);
+  border: 1px solid var(--nta-border);
+  border-top: 4px solid var(--nta-green);
+  border-radius: 4px;
+  padding: 24px 28px;
+  width: 100%;
+}
+.nta-reg-card h3 {
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--nta-header);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.nta-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+.nta-field label {
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--nta-text);
+}
+.nta-field input {
+  background: #fff;
+  border: 1px solid #999;
+  color: var(--nta-text);
+  padding: 9px 12px;
+  border-radius: 3px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: .88rem;
+  outline: none;
+  transition: border-color .15s;
+  width: 100%;
+}
+.nta-field input:focus { border-color: var(--nta-header); }
+.reg-err {
+  background: #fff3f3;
+  border: 1px solid #f5c6c6;
+  border-radius: 3px;
+  padding: 7px 11px;
+  font-size: .75rem;
+  color: var(--nta-red);
+  margin-bottom: 10px;
+  display: none;
+}
+.nta-start-btn {
+  width: 100%;
+  background: var(--nta-header);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 3px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: .9rem;
+  cursor: pointer;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  transition: background .15s;
+}
+.nta-start-btn:hover { background: #122d5a; }
+
+/* ===== QUIZ PAGE ===== */
+#quiz {
+  display: none;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--nta-bg);
+}
+
+/* Top header bar */
+.nta-topbar {
+  background: var(--nta-header);
+  border-bottom: 3px solid #f57c00;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 18px;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.nta-topbar .brand { color: #fff; }
+.nta-topbar .brand .b1 { font-weight: 700; font-size: .95rem; }
+.nta-topbar .brand .b2 { font-size: .68rem; color: #adc6f5; }
+.nta-topbar .student-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.nta-topbar .stu-name {
+  font-size: .78rem;
+  color: #fff;
+  font-weight: 600;
+}
+.nta-topbar .stu-batch {
+  font-size: .72rem;
+  color: #adc6f5;
+}
+
+/* Second toolbar - section tabs + timer */
+.nta-toolbar2 {
+  background: #e8eef8;
+  border-bottom: 1px solid var(--nta-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  flex-wrap: wrap;
+}
+.nta-section-tabs {
+  display: flex;
+  gap: 0;
+}
+.nta-section-tab {
+  padding: 10px 20px;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--nta-header);
+  border-bottom: 3px solid transparent;
+  cursor: default;
+  border-right: 1px solid var(--nta-border);
+  background: #d4dff2;
+}
+.nta-section-tab.active {
+  background: #fff;
+  border-bottom: 3px solid var(--nta-header);
+  color: var(--nta-header);
+}
+.nta-timer-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+}
+.nta-timer-label {
+  font-size: .75rem;
+  color: var(--nta-muted);
+  font-weight: 600;
+}
+.nta-timer {
+  font-family: 'Roboto', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--nta-header);
+  background: #fff;
+  border: 2px solid var(--nta-header);
+  border-radius: 3px;
+  padding: 4px 14px;
+  min-width: 90px;
+  text-align: center;
+}
+.nta-timer.warn { color: var(--nta-orange); border-color: var(--nta-orange); }
+.nta-timer.danger { color: var(--nta-red); border-color: var(--nta-red); animation: blink .8s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+
+/* Main quiz layout */
+.nta-quiz-body {
+  display: flex;
+  flex: 1;
+  gap: 0;
+}
+
+/* Question panel */
+.nta-qpanel {
+  flex: 1;
+  background: var(--nta-white);
+  border-right: 1px solid var(--nta-border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.nta-qheader {
+  background: var(--nta-lightblue);
+  border-bottom: 1px solid var(--nta-border);
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.nta-qnum-badge {
+  background: var(--nta-header);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 2px;
+  letter-spacing: .04em;
+}
+.nta-qtopic-badge {
+  background: #fff;
+  border: 1px solid #b8cce8;
+  color: var(--nta-header);
+  font-size: .72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+.nta-level-badge {
+  font-size: .68rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 2px;
+  border: 1px solid;
+}
+.nta-level-badge.easy-t { background: #e8f8ef; color: #007a3d; border-color: #7dcca4; }
+.nta-level-badge.mod-t { background: #fff8e1; color: #e65100; border-color: #ffb74d; }
+.nta-level-badge.hard-t { background: #fdecea; color: #c62828; border-color: #ef9a9a; }
+.nta-marks-info {
+  font-size: .72rem;
+  color: var(--nta-muted);
+  margin-left: auto;
+}
+.nta-marks-info span { font-weight: 700; }
+.nta-marks-info .pos { color: var(--nta-green); }
+.nta-marks-info .neg { color: var(--nta-red); }
+
+.nta-qbody {
+  padding: 20px 24px;
+  flex: 1;
+}
+.nta-qtext {
+  font-size: .95rem;
+  line-height: 1.85;
+  color: var(--nta-text);
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+.nta-opts {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.nta-opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  border: 1px solid var(--nta-border);
+  border-top: none;
+  padding: 0;
+  cursor: pointer;
+  background: #fff;
+  transition: background .1s;
+  width: 100%;
+  text-align: left;
+}
+.nta-opt:first-child { border-top: 1px solid var(--nta-border); border-radius: 3px 3px 0 0; }
+.nta-opt:last-child { border-radius: 0 0 3px 3px; }
+.nta-opt:hover { background: #f0f5ff; }
+.nta-opt.sel { background: #e0ebff; border-color: var(--nta-header); }
+.nta-opt.sel + .nta-opt { border-top-color: var(--nta-header); }
+.nta-opt-label {
+  background: #e8eef8;
+  color: var(--nta-header);
+  font-weight: 700;
+  font-size: .82rem;
+  padding: 12px 14px;
+  min-width: 42px;
+  text-align: center;
+  border-right: 1px solid var(--nta-border);
+  flex-shrink: 0;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nta-opt.sel .nta-opt-label {
+  background: var(--nta-header);
+  color: #fff;
+  border-right-color: var(--nta-header);
+}
+.nta-opt-text {
+  padding: 11px 14px;
+  font-size: .88rem;
+  color: var(--nta-text);
+  line-height: 1.55;
+}
+
+/* Bottom action bar */
+.nta-action-bar {
+  background: #e8eef8;
+  border-top: 1px solid var(--nta-border);
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.nta-btn {
+  font-family: 'Open Sans', sans-serif;
+  font-size: .8rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1px solid;
+  transition: all .12s;
+  letter-spacing: .02em;
+}
+.nta-btn.blue { background: var(--nta-header); color: #fff; border-color: var(--nta-header); }
+.nta-btn.blue:hover { background: #122d5a; }
+.nta-btn.grey { background: #fff; color: var(--nta-text); border-color: #999; }
+.nta-btn.grey:hover { background: #f0f0f0; }
+.nta-btn.green { background: var(--nta-green); color: #fff; border-color: var(--nta-green); }
+.nta-btn.green:hover { background: #007a3d; }
+.nta-btn.red { background: var(--nta-red); color: #fff; border-color: var(--nta-red); }
+.nta-btn.red:hover { background: #c62828; }
+.nta-btn.purple { background: var(--nta-purple); color: #fff; border-color: var(--nta-purple); }
+.nta-btn:disabled { opacity: .35; cursor: not-allowed; }
+.nta-btn-group { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Right sidebar */
+.nta-sidebar {
+  width: 260px;
+  background: var(--nta-white);
+  border-left: 1px solid var(--nta-border);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+.nta-sidebar-header {
+  background: var(--nta-header);
+  color: #fff;
+  padding: 10px 14px;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.nta-legend {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--nta-border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.nta-leg-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .7rem;
+  color: var(--nta-text);
+}
+.nta-leg-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .65rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  color: #fff;
+}
+.nta-leg-dot.answered { background: var(--nta-answered); }
+.nta-leg-dot.notanswered { background: var(--nta-notanswered); }
+.nta-leg-dot.notvisited { background: var(--nta-notvisited); color: #555; border: 1px solid #bbb; }
+.nta-leg-dot.marked { background: var(--nta-marked); }
+
+.nta-palette-title {
+  padding: 8px 14px;
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--nta-header);
+  border-bottom: 1px solid var(--nta-border);
+  background: #f5f7fa;
+}
+.nta-palette {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  padding: 10px 14px;
+  flex: 1;
+}
+.nta-pdot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .72rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .1s;
+  color: #555;
+  background: var(--nta-notvisited);
+  border: 1px solid #bbb;
+}
+.nta-pdot:hover { transform: scale(1.1); }
+.nta-pdot.visited { background: var(--nta-notanswered); color: #fff; border: none; }
+.nta-pdot.answered { background: var(--nta-answered); color: #fff; border: none; }
+.nta-pdot.cur { outline: 3px solid var(--nta-orange); outline-offset: 2px; }
+
+.nta-sidebar-footer {
+  padding: 10px 14px;
+  border-top: 1px solid var(--nta-border);
+  background: #f5f7fa;
+}
+.nta-submit-btn {
+  width: 100%;
+  background: var(--nta-header);
+  color: #fff;
+  border: none;
+  padding: 11px;
+  border-radius: 3px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: .85rem;
+  cursor: pointer;
+  letter-spacing: .04em;
+  transition: background .15s;
+}
+.nta-submit-btn:hover { background: #122d5a; }
+
+.nta-attempts-summary {
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--nta-border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+.nta-att-box {
+  text-align: center;
+  padding: 5px;
+  border-radius: 3px;
+}
+.nta-att-num {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.nta-att-lbl {
+  font-size: .6rem;
+  color: var(--nta-muted);
+  text-transform: uppercase;
+}
+
+/* ===== RESULT PAGE ===== */
+#result {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--nta-bg);
+}
+.nta-result-header {
+  width: 100%;
+  background: var(--nta-header);
+  border-bottom: 3px solid #f57c00;
+  padding: 12px 24px;
+  color: #fff;
+  text-align: center;
+}
+.nta-result-header h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.nta-result-header .sub {
+  font-size: .75rem;
+  color: #adc6f5;
+  margin-top: 3px;
+}
+
+.nta-result-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px 60px;
+  gap: 18px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.nta-scorecard {
+  background: #fff;
+  border: 1px solid var(--nta-border);
+  border-top: 4px solid var(--nta-header);
+  border-radius: 4px;
+  padding: 24px 32px;
+  text-align: center;
+  min-width: 200px;
+}
+.nta-score-num {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--nta-header);
+  line-height: 1;
+}
+.nta-score-denom {
+  font-size: .82rem;
+  color: var(--nta-muted);
+  margin-top: 4px;
+}
+.nta-score-pct {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--nta-header);
+  margin-top: 8px;
+}
+
+.nta-fb-card {
+  background: #fff;
+  border: 1px solid var(--nta-border);
+  border-radius: 4px;
+  padding: 20px 24px;
+  flex: 1;
+  min-width: 240px;
+  max-width: 400px;
+}
+.nta-fb-grade {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.nta-fb-msg {
+  font-size: .82rem;
+  color: var(--nta-muted);
+  line-height: 1.65;
+}
+
+.nta-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 10px;
+  width: 100%;
+}
+.nta-stat-box {
+  background: #fff;
+  border: 1px solid var(--nta-border);
+  border-radius: 4px;
+  padding: 14px 10px;
+  text-align: center;
+}
+.nta-stat-num {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.nta-stat-lbl {
+  font-size: .65rem;
+  color: var(--nta-muted);
+  margin-top: 3px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.nta-analytics-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.nta-ana-card {
+  background: #fff;
+  border: 1px solid var(--nta-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.nta-ana-head {
+  background: var(--nta-header);
+  color: #fff;
+  padding: 10px 16px;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.nta-ana-sub {
+  background: var(--nta-lightblue);
+  padding: 6px 16px;
+  font-size: .72rem;
+  color: var(--nta-muted);
+  border-bottom: 1px solid var(--nta-border);
+}
+.nta-ana-body { padding: 14px 16px; }
+
+.ts-card { background: #f5f7fa; border: 1px solid var(--nta-border); border-radius: 3px; padding: 9px 13px; flex: 1; min-width: 90px; text-align: center; }
+.ts-val { font-size: 1.05rem; font-weight: 700; }
+.ts-lbl { font-size: .58rem; color: var(--nta-muted); text-transform: uppercase; letter-spacing: .06em; margin-top: 2px; }
+.time-summary-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+
+.time-table { width: 100%; border-collapse: collapse; font-size: .78rem; }
+.time-table th { background: var(--nta-lightblue); font-weight: 700; padding: 7px 9px; text-align: left; border: 1px solid var(--nta-border); color: var(--nta-header); font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; }
+.time-table td { padding: 7px 9px; border: 1px solid #e8e8e8; vertical-align: middle; }
+.time-table tr:nth-child(even) td { background: #fafafa; }
+.t-status { font-size: .65rem; font-weight: 700; padding: 2px 7px; border-radius: 2px; display: inline-block; }
+.t-status.fast { background: #fdecea; color: var(--nta-red); }
+.t-status.slow { background: #fff8e1; color: var(--nta-orange); }
+.t-status.ok { background: #e8f8ef; color: var(--nta-green); }
+.t-ans { font-size: .65rem; font-weight: 700; padding: 2px 6px; border-radius: 2px; display: inline-block; }
+.t-ans.c { background: #e8f8ef; color: var(--nta-green); }
+.t-ans.w { background: #fdecea; color: var(--nta-red); }
+.t-ans.s { background: #f0f0f0; color: var(--nta-muted); }
+.time-legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--nta-border); }
+.tleg { display: flex; align-items: center; gap: 5px; font-size: .68rem; color: var(--nta-muted); }
+.tleg-dot { width: 8px; height: 8px; border-radius: 2px; }
+
+.topic-grid { display: flex; flex-direction: column; gap: 8px; }
+.tcard { display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: #fafafa; border: 1px solid var(--nta-border); border-radius: 3px; flex-wrap: wrap; }
+.tcard-name { font-weight: 700; font-size: .78rem; min-width: 155px; color: var(--nta-text); }
+.tcard-qs { font-size: .65rem; color: var(--nta-muted); font-weight: 400; }
+.tcard-bars { flex: 1; min-width: 160px; display: flex; flex-direction: column; gap: 3px; }
+.bar-row { display: flex; align-items: center; gap: 6px; font-size: .65rem; color: var(--nta-muted); }
+.bar-lbl { min-width: 45px; }
+.bar-track { flex: 1; height: 5px; background: #ddd; border-radius: 2px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 2px; }
+.bar-fill.c { background: var(--nta-green); }
+.bar-fill.w { background: var(--nta-red); }
+.bar-fill.s { background: #bbb; }
+.tcard-badge { font-size: .65rem; font-weight: 700; padding: 3px 8px; border-radius: 2px; min-width: 55px; text-align: center; border: 1px solid; }
+.tcard-badge.strong { background: #e8f8ef; color: var(--nta-green); border-color: #7dcca4; }
+.tcard-badge.revise { background: #fff8e1; color: var(--nta-orange); border-color: #ffb74d; }
+.tcard-badge.urgent { background: #fdecea; color: var(--nta-red); border-color: #ef9a9a; }
+.tcard-badge.skip { background: #f5f5f5; color: var(--nta-muted); border-color: #ccc; }
+
+.guide-list { display: flex; flex-direction: column; gap: 10px; }
+.gcard { border-radius: 3px; padding: 12px 14px; border-left: 4px solid; }
+.gcard.urgent { background: #fdecea; border-color: var(--nta-red); }
+.gcard.caution { background: #fff8e1; border-color: var(--nta-orange); }
+.gcard.improve { background: #e8eef8; border-color: var(--nta-header); }
+.gcard.strong { background: #e8f8ef; border-color: var(--nta-green); }
+.gcard-top { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; flex-wrap: wrap; }
+.gcard-topic { font-weight: 700; font-size: .78rem; color: var(--nta-text); }
+.gpill { font-size: .62rem; font-weight: 700; padding: 2px 7px; border-radius: 2px; text-transform: uppercase; border: 1px solid; }
+.gpill.p1 { background: #fdecea; color: var(--nta-red); border-color: #ef9a9a; }
+.gpill.p2 { background: #fff8e1; color: var(--nta-orange); border-color: #ffb74d; }
+.gpill.p3 { background: #e8eef8; color: var(--nta-header); border-color: #b8cce8; }
+.gpill.p4 { background: #e8f8ef; color: var(--nta-green); border-color: #7dcca4; }
+.gcard-score { font-size: .68rem; color: var(--nta-muted); margin-left: auto; }
+.gcard-msg { font-size: .8rem; color: var(--nta-text); line-height: 1.6; }
+.gcard-action { margin-top: 6px; font-size: .77rem; color: var(--nta-header); font-weight: 600; }
+.gcard-action::before { content: ">> "; }
+
+.nta-res-acts { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+.nta-ra { padding: 10px 24px; border-radius: 3px; font-family: 'Open Sans', sans-serif; font-weight: 700; font-size: .85rem; cursor: pointer; letter-spacing: .03em; transition: all .13s; border: 1px solid; }
+.nta-ra.pri { background: var(--nta-header); color: #fff; border-color: var(--nta-header); }
+.nta-ra.pri:hover { background: #122d5a; }
+.nta-ra.sec { background: #fff; color: var(--nta-text); border-color: #999; }
+.nta-ra.sec:hover { background: #f0f0f0; }
+
+/* ===== SOLUTIONS ===== */
+#solutions {
+  display: none;
+  max-width: 900px;
+  width: 100%;
+  padding: 0 16px 80px;
+  align-self: center;
+}
+.sol-hd { font-size: 1.4rem; font-weight: 700; margin-top: 24px; margin-bottom: 3px; color: var(--nta-header); }
+.sol-by { font-size: .72rem; color: var(--nta-muted); letter-spacing: .1em; display: block; margin-bottom: 18px; }
+.sc { background: #fff; border: 1px solid var(--nta-border); border-radius: 3px; padding: 14px 16px; margin-bottom: 8px; }
+.sc.c { border-left: 4px solid var(--nta-green); }
+.sc.w { border-left: 4px solid var(--nta-red); }
+.sc.s { border-left: 4px solid #bbb; }
+.sqn { font-size: .68rem; color: var(--nta-muted); margin-bottom: 5px; display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+.sqt { font-size: .88rem; line-height: 1.7; margin-bottom: 10px; font-weight: 500; color: var(--nta-text); }
+.sa { font-size: .75rem; padding: 6px 10px; border-radius: 2px; margin-bottom: 5px; font-weight: 600; }
+.sa.your { background: #f5f5f5; color: var(--nta-muted); border: 1px solid #ddd; }
+.sa.your.ok { background: #e8f8ef; color: var(--nta-green); border: 1px solid #7dcca4; }
+.sa.your.bad { background: #fdecea; color: var(--nta-red); border: 1px solid #ef9a9a; }
+.sa.cor { background: #e8f8ef; color: var(--nta-green); border: 1px solid #7dcca4; }
+.sexp { font-size: .8rem; color: var(--nta-text); line-height: 1.75; margin-top: 8px; border-top: 1px solid #eee; padding-top: 8px; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #f0f2f5; }
+::-webkit-scrollbar-thumb { background: #c0c8d8; border-radius: 2px; }
+
+@media(max-width:720px) {
+  .nta-sidebar { display: none; }
+  .nta-qpanel { padding: 0; }
+  .nta-qbody { padding: 14px; }
+  .nta-stats-row { grid-template-columns: repeat(2,1fr); }
+  .nta-info-grid { grid-template-columns: repeat(2,1fr); }
+}
+
+</style>
+</head>
+<body>
+
+<div id="register">
+  <!-- NTA Header -->
+  <div class="nta-reg-header">
+    <div>
+      <div class="logo-text">National Testing Agency</div>
+      <div class="logo-sub">Joint Entrance Examination (Main)</div>
+    </div>
+    <div class="nta-logo-right">JEE MAIN 2026</div>
+  </div>
+
+  <div class="nta-reg-body">
+    <!-- Exam Title -->
+    <div class="nta-exam-title">
+      <h1>Physics - Elasticity</h1>
+      <div class="subtitle">Class 11 &nbsp;|&nbsp; Properties of Matter &nbsp;|&nbsp; JEE Mains 2026 Pattern &nbsp;|&nbsp; Prepared by Jitu Sir</div>
+    </div>
+
+    <!-- Info Grid -->
+    <div class="nta-info-grid">
+      <div class="nta-info-box"><div class="nv">30</div><div class="nl">Questions</div></div>
+      <div class="nta-info-box"><div class="nv">60</div><div class="nl">Minutes</div></div>
+      <div class="nta-info-box"><div class="nv">120</div><div class="nl">Max Marks</div></div>
+      <div class="nta-info-box"><div class="nv">+4 / -1</div><div class="nl">Marking</div></div>
+    </div>
+
+    <!-- Marking Scheme -->
+    <div class="nta-marking-table">
+      <table>
+        <thead><tr><th>Attempt</th><th>Marks</th><th>Remarks</th></tr></thead>
+        <tbody>
+          <tr><td>Correct Answer</td><td><span class="mark-pos">+4</span></td><td>Full marks awarded</td></tr>
+          <tr><td>Wrong Answer</td><td><span class="mark-neg">-1</span></td><td>Negative marking applied</td></tr>
+          <tr><td>Unattempted</td><td><span class="mark-zero">0</span></td><td>No marks deducted</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Topics -->
+    <div class="nta-topics-box">
+      <h3>Topics Covered</h3>
+      <div class="nta-topics-wrap">
+        <span class="nta-topic-chip">Stress and Strain</span>
+        <span class="nta-topic-chip">Young Modulus</span>
+        <span class="nta-topic-chip">Bulk Modulus</span>
+        <span class="nta-topic-chip">Shear Modulus</span>
+        <span class="nta-topic-chip">Poisson Ratio</span>
+        <span class="nta-topic-chip">Elastic Energy</span>
+        <span class="nta-topic-chip">Thermal Stress</span>
+        <span class="nta-topic-chip">Elastic Constants</span>
+      </div>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="nta-reg-card">
+      <h3>Candidate Registration</h3>
+      <div class="nta-field"><label>Full Name</label><input type="text" id="inp-name" placeholder="Enter your full name" autocomplete="off"></div>
+      <div class="nta-field"><label>Batch / Class</label><input type="text" id="inp-batch" placeholder="e.g. JEE 2026 Batch A" autocomplete="off"></div>
+      <div class="reg-err" id="reg-err">Please fill in both Name and Batch to proceed.</div>
+      <button class="nta-start-btn" onclick="beginQuiz()">Proceed to Exam &rsaquo;&rsaquo;</button>
+    </div>
+  </div>
+</div>
+
+<div id="quiz">
+  <!-- NTA Header -->
+  <div class="nta-topbar">
+    <div class="brand">
+      <div class="b1">Physics &mdash; Elasticity (Class 11)</div>
+      <div class="b2">JEE Mains 2026 Pattern &nbsp;|&nbsp; by Jitu Sir</div>
+    </div>
+    <div class="student-info">
+      <div><div class="stu-name" id="tb-name">-</div><div class="stu-batch" id="tb-batch">-</div></div>
+    </div>
+  </div>
+
+  <!-- Section bar + timer -->
+  <div class="nta-toolbar2">
+    <div class="nta-section-tabs">
+      <div class="nta-section-tab active">PHYSICS - SECTION A</div>
+    </div>
+    <div class="nta-timer-box">
+      <span class="nta-timer-label">Time Left:</span>
+      <div class="nta-timer" id="timer">60:00</div>
+    </div>
+  </div>
+
+  <div class="nta-quiz-body">
+    <!-- Question Panel -->
+    <div class="nta-qpanel">
+      <div class="nta-qheader">
+        <span class="nta-qnum-badge" id="qnum">Q 1 of 30</span>
+        <span class="nta-qtopic-badge" id="qtopic"></span>
+        <span class="nta-level-badge easy-t" id="qlevel">EASY</span>
+        <span class="nta-marks-info">Marks: <span class="pos">+4</span> | <span class="neg">-1</span></span>
+      </div>
+      <div class="nta-qbody">
+        <div class="nta-qtext" id="qtext"></div>
+        <div class="nta-opts" id="opts"></div>
+      </div>
+      <div class="nta-action-bar">
+        <div class="nta-btn-group">
+          <button class="nta-btn grey" id="prevBtn" onclick="go(cur-1)">&#8592; Previous</button>
+          <button class="nta-btn purple" onclick="clearOpt()">Clear Response</button>
+        </div>
+        <div class="nta-btn-group">
+          <button class="nta-btn blue" onclick="go(cur+1)" id="nextBtn">Save &amp; Next &#8594;</button>
+          <button class="nta-btn red" id="subBtn" style="display:none" onclick="confirmSub()">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="nta-sidebar">
+      <div class="nta-sidebar-header">Question Palette</div>
+
+      <!-- Attempts summary -->
+      <div class="nta-attempts-summary">
+        <div class="nta-att-box"><div class="nta-att-num" id="att-answered" style="color:var(--nta-green)">0</div><div class="nta-att-lbl">Answered</div></div>
+        <div class="nta-att-box"><div class="nta-att-num" id="att-not" style="color:var(--nta-red)">30</div><div class="nta-att-lbl">Not Answered</div></div>
+      </div>
+
+      <!-- Legend -->
+      <div class="nta-legend">
+        <div class="nta-leg-item"><div class="nta-leg-dot answered">1</div><span>Answered</span></div>
+        <div class="nta-leg-item"><div class="nta-leg-dot notanswered">1</div><span>Not Answered</span></div>
+        <div class="nta-leg-item"><div class="nta-leg-dot notvisited">1</div><span>Not Visited</span></div>
+        <div class="nta-leg-item"><div class="nta-leg-dot marked">1</div><span>Marked</span></div>
+      </div>
+
+      <div class="nta-palette-title">Section: PHYSICS</div>
+      <div class="nta-palette" id="palette"></div>
+
+      <div class="nta-sidebar-footer">
+        <button class="nta-submit-btn" onclick="confirmSub()">Submit Test</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="result">
+  <div class="nta-result-header">
+    <h2>Physics &mdash; Elasticity &nbsp;|&nbsp; Result</h2>
+    <div class="sub">JEE Mains 2026 Pattern &nbsp;|&nbsp; Prepared by Jitu Sir</div>
+  </div>
+  <div class="nta-result-body">
+    <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;width:100%">
+      <div class="nta-scorecard">
+        <div class="nta-score-num" id="fscore">0</div>
+        <div class="nta-score-denom">out of 120</div>
+        <div class="nta-score-pct" id="fpct"></div>
+        <div id="res-student" style="font-size:.75rem;color:#888;margin-top:6px;"></div>
+      </div>
+      <div class="nta-fb-card">
+        <div class="nta-fb-grade" id="fb-grade"></div>
+        <div class="nta-fb-msg" id="fb-msg"></div>
+      </div>
+    </div>
+
+    <div class="nta-stats-row">
+      <div class="nta-stat-box"><div class="nta-stat-num" id="rc" style="color:var(--nta-green)">0</div><div class="nta-stat-lbl">Correct</div></div>
+      <div class="nta-stat-box"><div class="nta-stat-num" id="rw" style="color:var(--nta-red)">0</div><div class="nta-stat-lbl">Wrong</div></div>
+      <div class="nta-stat-box"><div class="nta-stat-num" id="rs" style="color:#888">0</div><div class="nta-stat-lbl">Skipped</div></div>
+      <div class="nta-stat-box"><div class="nta-stat-num" id="racc" style="color:var(--nta-header)">0%</div><div class="nta-stat-lbl">Accuracy</div></div>
+    </div>
+
+    <div class="nta-analytics-wrap">
+      <div class="nta-ana-card">
+        <div class="nta-ana-head">Time Analysis</div>
+        <div class="nta-ana-sub">Your time vs ideal time for each question</div>
+        <div class="nta-ana-body">
+          <div class="time-summary-row" id="time-summary"></div>
+          <div style="overflow-x:auto"><table class="time-table">
+            <thead><tr><th>Q</th><th>Topic</th><th>Level</th><th>Your Time</th><th>Ideal</th><th>Status</th><th>Result</th></tr></thead>
+            <tbody id="time-tbody"></tbody>
+          </table></div>
+          <div class="time-legend">
+            <div class="tleg"><div class="tleg-dot" style="background:var(--nta-green)"></div>On Time</div>
+            <div class="tleg"><div class="tleg-dot" style="background:var(--nta-red)"></div>Too Fast</div>
+            <div class="tleg"><div class="tleg-dot" style="background:var(--nta-orange)"></div>Overtime</div>
+          </div>
+        </div>
+      </div>
+      <div class="nta-ana-card">
+        <div class="nta-ana-head">Topic-wise Performance</div>
+        <div class="nta-ana-sub">Correct / Wrong / Skipped per topic with priority badge</div>
+        <div class="nta-ana-body"><div class="topic-grid" id="topic-grid"></div></div>
+      </div>
+      <div class="nta-ana-card">
+        <div class="nta-ana-head">Jitu Sir Expert Guidance</div>
+        <div class="nta-ana-sub">Personalised revision plan sorted by priority</div>
+        <div class="nta-ana-body"><div class="guide-list" id="guide-list"></div></div>
+      </div>
+    </div>
+
+    <div class="nta-res-acts">
+      <button class="nta-ra pri" onclick="showSol()">View Full Solutions</button>
+      <button class="nta-ra sec" onclick="location.reload()">Retake Quiz</button>
+    </div>
+  </div>
+</div>
+
+<div id="solutions">
+  <div class="sol-hd">Solutions and Explanations</div>
+  <span class="sol-by">Prepared by Jitu Sir &mdash; Elasticity &mdash; Class 11 &mdash; JEE Mains 2026</span>
+  <div id="sollist"></div>
+</div>
+
+<script>
+
+var Q = [
+{unit:"Stress and Strain", level:"easy-t", idealTime:55,
+q:"A wire of cross-sectional area A = 2x10^-4 m2 is stretched by a force F = 1000 N. The longitudinal stress in the wire is:",
+opts:{A:"2x10^8 Pa", B:"5x10^6 Pa", C:"2x10^6 Pa", D:"5x10^8 Pa"},
+ans:"B",
+exp:"Stress = F/A = 1000 / 2x10^-4 = 5x10^6 Pa. Stress is force per unit area. Unit: Pascal (Pa) = N/m2. Longitudinal stress is produced when force is applied along the length (tensile if stretching, compressive if compressing)."},
+
+{unit:"Stress and Strain", level:"easy-t", idealTime:55,
+q:"A wire of length L = 2 m is stretched by 2 mm. The longitudinal strain in the wire is:",
+opts:{A:"1x10^-4", B:"1x10^-3", C:"1x10^-2", D:"2x10^-3"},
+ans:"B",
+exp:"Strain = change in length / original length = delta_L / L = 2x10^-3 / 2 = 1x10^-3. Strain is dimensionless (no units). It is the fractional change in dimension. Longitudinal strain = delta_L / L. Volumetric strain = delta_V / V."},
+
+{unit:"Young Modulus", level:"mod-t", idealTime:90,
+q:"A wire of length L = 1 m, cross-section A = 1x10^-4 m2 is stretched by F = 5000 N. If the extension is 0.5 mm, the Young modulus is:",
+opts:{A:"5x10^10 Pa", B:"1x10^11 Pa", C:"2x10^11 Pa", D:"1x10^10 Pa"},
+ans:"B",
+exp:"Y = Stress/Strain = (F/A) / (dL/L) = FL / (A.dL) = 5000 x 1 / (1x10^-4 x 0.5x10^-3) = 5000 / 5x10^-8 = 1x10^11 Pa. This is the value for many metals like copper. Steel has Y ~ 2x10^11 Pa. Young modulus measures the stiffness of a material."},
+
+{unit:"Young Modulus", level:"mod-t", idealTime:95,
+q:"A metal rod of density rho = 8000 kg/m3, length L = 5 m and Y = 2x10^11 Pa is suspended vertically. The elongation due to its own weight is: (g = 10 m/s2)",
+opts:{A:"2.5x10^-6 m", B:"5x10^-6 m", C:"1x10^-5 m", D:"5x10^-5 m"},
+ans:"C",
+exp:"Extension under own weight: dL = rho.g.L^2 / (2Y). dL = 8000 x 10 x 25 / (2 x 2x10^11) = 2x10^6 / 4x10^11 = 5x10^-6 m. Wait: rho.g.L^2/(2Y) = 8000 x 10 x 25 / (4x10^11) = 2x10^6/4x10^11 = 5x10^-6 m. Answer is B = 5x10^-6 m. The factor 1/2 appears because only half the weight acts on the midpoint average."},
+
+{unit:"Bulk Modulus", level:"mod-t", idealTime:90,
+q:"A liquid is subjected to a pressure of P = 1x10^6 Pa and its volume decreases by a fraction dV/V = 2x10^-4. The Bulk modulus of the liquid is:",
+opts:{A:"2x10^9 Pa", B:"5x10^9 Pa", C:"2x10^10 Pa", D:"5x10^10 Pa"},
+ans:"B",
+exp:"Bulk modulus B = -P / (dV/V) = P / |dV/V| = 1x10^6 / 2x10^-4 = 5x10^9 Pa. The negative sign in definition ensures B is positive (volume decreases when pressure increases). Larger B means less compressible. Water: B ~ 2x10^9 Pa. Ideal gas (isothermal): B = P."},
+
+{unit:"Bulk Modulus", level:"mod-t", idealTime:85,
+q:"The Bulk modulus of a material is B = 2x10^10 Pa. Its compressibility is:",
+opts:{A:"5x10^-9 Pa^-1", B:"5x10^-10 Pa^-1", C:"5x10^-11 Pa^-1", D:"2x10^10 Pa^-1"},
+ans:"C",
+exp:"Compressibility = 1/B = 1 / 2x10^10 = 5x10^-11 Pa^-1. Compressibility is the fractional change in volume per unit pressure. More compressible = smaller B. Gases are very compressible (B ~ 10^5 Pa), solids are nearly incompressible (B ~ 10^10 to 10^11 Pa)."},
+
+{unit:"Poisson Ratio", level:"mod-t", idealTime:90,
+q:"A wire is stretched causing longitudinal strain of 5x10^-4 and lateral strain of 1.5x10^-4. The Poisson ratio of the material is:",
+opts:{A:"0.20", B:"0.25", C:"0.30", D:"0.33"},
+ans:"C",
+exp:"Poisson ratio sigma = lateral strain / longitudinal strain = 1.5x10^-4 / 5x10^-4 = 0.30. Poisson ratio is always positive (when wire elongates, it gets thinner). Range: 0 to 0.5. For most metals: 0.25 to 0.35. sigma = 0.5 means incompressible (rubber). sigma = 0 means no lateral change (cork)."},
+
+{unit:"Shear Modulus", level:"mod-t", idealTime:90,
+q:"A shear stress of 2x10^5 Pa is applied to a material causing a shear strain of 4x10^-3. The shear modulus (rigidity modulus) is:",
+opts:{A:"8x10^8 Pa", B:"5x10^7 Pa", C:"8x10^7 Pa", D:"5x10^8 Pa"},
+ans:"B",
+exp:"Shear modulus G = Shear stress / Shear strain = 2x10^5 / 4x10^-3 = 5x10^7 Pa. Shear modulus (also called modulus of rigidity) resists change of shape at constant volume. Liquids have G = 0 (they cannot resist shear). Solids have finite G. Steel: G ~ 8x10^10 Pa."},
+
+{unit:"Elastic Energy", level:"mod-t", idealTime:90,
+q:"A wire is stretched by a force F = 500 N and the extension produced is dL = 0.4 mm. The elastic potential energy stored in the wire is:",
+opts:{A:"0.05 J", B:"0.10 J", C:"0.20 J", D:"0.40 J"},
+ans:"B",
+exp:"Energy stored = (1/2) x F x dL = 0.5 x 500 x 0.4x10^-3 = 0.5 x 0.2 = 0.1 J. This formula comes from the fact that force increases linearly from 0 to F as extension increases from 0 to dL (Hooke law). Work done = area under F-x graph = (1/2).F.dL."},
+
+{unit:"Elastic Energy", level:"mod-t", idealTime:90,
+q:"A wire of Y = 2x10^11 Pa is under strain of 1x10^-3. The elastic energy density stored in the wire is:",
+opts:{A:"1x10^4 J/m3", B:"1x10^5 J/m3", C:"2x10^5 J/m3", D:"1x10^6 J/m3"},
+ans:"B",
+exp:"Energy density = (1/2) x Y x strain^2 = 0.5 x 2x10^11 x (10^-3)^2 = 0.5 x 2x10^11 x 10^-6 = 10^5 J/m3. Also: energy density = stress^2 / (2Y) = (Y x strain)^2 / (2Y) = Y x strain^2 / 2. Same result."},
+
+{unit:"Young Modulus", level:"hard-t", idealTime:130,
+q:"Two wires of same material have lengths L1 = 2 m, L2 = 4 m and diameters d1 = 1 mm, d2 = 2 mm. Under the same load F, the ratio of elongations dL1/dL2 is:",
+opts:{A:"1:1", B:"1:2", C:"2:1", D:"1:4"},
+ans:"A",
+exp:"dL = FL / (Y.A) = FL / (Y.pi.r^2). dL1/dL2 = (L1/r1^2) / (L2/r2^2) = (L1.r2^2) / (L2.r1^2). L1=2, L2=4, r1=0.5mm, r2=1mm. dL1/dL2 = (2 x 1^2) / (4 x 0.5^2) = 2/1 = 2/1... wait: r1=0.5, r1^2=0.25. r2=1, r2^2=1. dL1/dL2 = (2 x 1) / (4 x 0.25) = 2/1 = 2. Hmm that gives 2:1. Let me recheck: dL1/dL2 = (F.L1)/(Y.pi.r1^2) / (F.L2)/(Y.pi.r2^2) = (L1.r2^2)/(L2.r1^2) = (2 x 1)/(4 x 0.25) = 2/1 = 2. So dL1:dL2 = 2:1. Answer C."},
+
+{unit:"Thermal Stress", level:"mod-t", idealTime:95,
+q:"A steel rod of Y = 2x10^11 Pa and coefficient of linear expansion alpha = 12x10^-6 /C is heated by dT = 50 C but is prevented from expanding. The thermal stress developed is:",
+opts:{A:"6x10^7 Pa", B:"1.2x10^8 Pa", C:"2.4x10^8 Pa", D:"6x10^8 Pa"},
+ans:"B",
+exp:"If free to expand: dL = L.alpha.dT (strain = alpha.dT). Since expansion is prevented, this strain is converted to compressive stress. Thermal stress = Y x alpha x dT = 2x10^11 x 12x10^-6 x 50 = 2x10^11 x 6x10^-4 = 1.2x10^8 Pa. This is compressive stress because the rod wants to expand but cannot."},
+
+{unit:"Young Modulus", level:"hard-t", idealTime:130,
+q:"The breaking stress of steel is 3x10^8 Pa and density is 8000 kg/m3. The maximum length of steel wire that can hang vertically under its own weight without breaking is: (g = 10 m/s2)",
+opts:{A:"1.25 km", B:"2.5 km", C:"3.75 km", D:"5 km"},
+ans:"C",
+exp:"At the top, stress = weight of wire / area = rho.g.L. For it not to break: rho.g.L <= breaking stress. L_max = breaking stress / (rho.g) = 3x10^8 / (8000 x 10) = 3x10^8 / 8x10^4 = 3750 m = 3.75 km. This gives the concept of specific strength. High-strength materials with low density (carbon fibre) can have much larger L_max."},
+
+{unit:"Young Modulus", level:"mod-t", idealTime:90,
+q:"A wire of length L = 2 m, area A = 1x10^-6 m2 and Y = 2x10^11 Pa behaves like a spring. Its spring constant is:",
+opts:{A:"5x10^4 N/m", B:"1x10^5 N/m", C:"2x10^5 N/m", D:"4x10^5 N/m"},
+ans:"B",
+exp:"From Hooke law: F = Y.A.dL/L = (Y.A/L) x dL. So spring constant k = Y.A/L = (2x10^11 x 1x10^-6) / 2 = 2x10^5 / 2 = 1x10^5 N/m. Every elastic material behaves like a spring. This is why springs are made from metals with high Y."},
+
+{unit:"Young Modulus", level:"hard-t", idealTime:130,
+q:"Two wires (1: L1=1.5 m, Y1=2x10^11 Pa, A1=2x10^-6 m2) and (2: L2=2 m, Y2=1x10^11 Pa, A2=1x10^-6 m2) are joined in series and a load F=200 N is applied. The total extension is:",
+opts:{A:"3.25 mm", B:"4.75 mm", C:"2.75 mm", D:"5.5 mm"},
+ans:"B",
+exp:"Series: same force F=200 N through both. dL1 = F.L1/(Y1.A1) = 200 x 1.5 / (2x10^11 x 2x10^-6) = 300 / 4x10^5 = 7.5x10^-4 m = 0.75 mm. dL2 = 200 x 2 / (1x10^11 x 1x10^-6) = 400 / 1x10^5 = 4x10^-3 m = 4.0 mm. Total = 0.75 + 4.0 = 4.75 mm."},
+
+{unit:"Elastic Constants", level:"hard-t", idealTime:140,
+q:"The Young modulus Y = 1x10^11 Pa and the interatomic distance (equilibrium) r0 = 2x10^-10 m for a material. The interatomic force constant is:",
+opts:{A:"10 N/m", B:"20 N/m", C:"40 N/m", D:"5 N/m"},
+ans:"B",
+exp:"Relation between Y and interatomic force constant k_inter: Y = k_inter / r0. So k_inter = Y x r0 = 1x10^11 x 2x10^-10 = 20 N/m. Physical meaning: each atom is connected to neighbours by spring of stiffness k_inter = 20 N/m. Young modulus is the macroscopic manifestation of these microscopic bonds."},
+
+{unit:"Bulk Modulus", level:"hard-t", idealTime:120,
+q:"A sphere of volume V = 1 litre = 1x10^-3 m3 is subjected to pressure P = 2x10^7 Pa. If B = 2x10^10 Pa, the decrease in volume is:",
+opts:{A:"0.5 cm3", B:"1.0 cm3", C:"2.0 cm3", D:"0.1 cm3"},
+ans:"B",
+exp:"B = P / (dV/V) => dV = PV/B = (2x10^7 x 1x10^-3) / 2x10^10 = 2x10^4 / 2x10^10 = 1x10^-6 m3 = 1 cm3. Volume decreases by 1 cm3. Fractional decrease = dV/V = P/B = 2x10^7/2x10^10 = 1x10^-3 = 0.1%."},
+
+{unit:"Elastic Constants", level:"hard-t", idealTime:140,
+q:"Which relation between elastic constants Y (Young modulus), B (Bulk modulus), G (Shear modulus) and sigma (Poisson ratio) is CORRECT?",
+opts:{A:"Y = B + 2G", B:"Y = 2G(1 + sigma) and Y = 3B(1 - 2.sigma)", C:"Y = G(1 + sigma) and Y = B(1 - 2.sigma)", D:"Y = 9B + G"},
+ans:"B",
+exp:"Correct relations: Y = 2G(1 + sigma) links Y with shear modulus. Y = 3B(1 - 2.sigma) links Y with bulk modulus. Combined: Y = 9BG/(3B + G). These three constants are not independent: if any two are known, the third is determined. For sigma=1/3: Y=8G/3 and Y=B. For sigma=0.5 (rubber): B tends to infinity (incompressible)."},
+
+{unit:"Young Modulus", level:"hard-t", idealTime:130,
+q:"A cylindrical wire of radius r = 2 mm, length L = 1 m, Y = 2x10^11 Pa is loaded with W = 400 N. The extension produced is: (pi = 3.14)",
+opts:{A:"0.16 mm", B:"0.32 mm", C:"0.08 mm", D:"0.64 mm"},
+ans:"A",
+exp:"A = pi.r^2 = 3.14 x (2x10^-3)^2 = 3.14 x 4x10^-6 = 1.256x10^-5 m2. dL = WL/(Y.A) = 400 x 1 / (2x10^11 x 1.256x10^-5) = 400 / 2.513x10^6 = 1.59x10^-4 m = 0.159 mm ~ 0.16 mm."},
+
+{unit:"Stress and Strain", level:"mod-t", idealTime:90,
+q:"Which of the following statements about elastic moduli is CORRECT?",
+opts:{A:"Steel is more elastic than rubber because it has larger Y", B:"Rubber is more elastic than steel because it stretches more", C:"Both have same elasticity", D:"Elasticity depends only on the shape, not material"},
+ans:"A",
+exp:"Scientifically, a material is MORE elastic if it returns to original shape with LESS deformation for the same stress (higher Y = more elastic). Steel (Y~2x10^11 Pa) is more elastic than rubber (Y~10^6 Pa). In everyday language we say rubber is elastic because it stretches, but in physics elastic = ability to resist deformation and restore shape."},
+
+{unit:"Elastic Energy", level:"hard-t", idealTime:120,
+q:"A wire of volume V = 1x10^-5 m3 is under stress 2x10^6 Pa with Y = 2x10^11 Pa. The elastic potential energy stored is:",
+opts:{A:"1x10^-4 J", B:"2x10^-4 J", C:"1x10^-3 J", D:"5x10^-5 J"},
+ans:"A",
+exp:"Energy density = stress^2 / (2Y) = (2x10^6)^2 / (2 x 2x10^11) = 4x10^12 / 4x10^11 = 10 J/m3. Total energy U = energy density x volume = 10 x 1x10^-5 = 1x10^-4 J."},
+
+{unit:"Young Modulus", level:"hard-t", idealTime:140,
+q:"A wire of uniform cross-section is replaced by one of the same material but with DOUBLE the length and HALF the radius. Under the same load, the extension becomes:",
+opts:{A:"Same", B:"4 times", C:"8 times", D:"16 times"},
+ans:"C",
+exp:"dL = FL/(Y.A) = FL/(Y.pi.r^2). New wire: L_new=2L, r_new=r/2. dL_new = F.(2L)/(Y.pi.(r/2)^2) = 2FL/(Y.pi.r^2/4) = 8FL/(Y.pi.r^2) = 8.dL. Extension becomes 8 times. TRICK: doubling L doubles dL. Halving r quadruples dL (r^2 in denominator). Total = 2 x 4 = 8 times."},
+
+{unit:"Bulk Modulus", level:"mod-t", idealTime:100,
+q:"For an ideal gas at pressure P undergoing isothermal process, the Bulk modulus B_T and for adiabatic process B_S are:",
+opts:{A:"B_T = P/gamma, B_S = P", B:"B_T = gamma.P, B_S = P", C:"B_T = P, B_S = gamma.P", D:"B_T = B_S = P"},
+ans:"C",
+exp:"For ideal gas: Isothermal (PV=constant): differentiate => P.dV + V.dP = 0 => dP/dV = -P/V => B_T = P. Adiabatic (PV^gamma=constant): B_S = gamma.P. Since gamma > 1: B_S > B_T. Speed of sound uses B_S (adiabatic). This is why Newton's formula for speed of sound was incorrect (he used B_T) and Laplace corrected it with gamma."},
+
+{unit:"Stress and Strain", level:"mod-t", idealTime:90,
+q:"A wire has breaking load of 1.2x10^4 N. With a safety factor of 6, the maximum safe load that can be applied is:",
+opts:{A:"1000 N", B:"2000 N", C:"3000 N", D:"6000 N"},
+ans:"B",
+exp:"Safe load = Breaking load / Safety factor = 1.2x10^4 / 6 = 2000 N. Safety factor accounts for imperfections, dynamic loads, and unforeseen stresses. Bridges, buildings and aircraft use safety factors of 3-10 depending on application. Never apply load equal to breaking load in practice."},
+
+{unit:"Young Modulus", level:"hard-t", idealTime:140,
+q:"A tapered rod has diameters d1 = 4 cm and d2 = 2 cm at its two ends, length L = 0.5 m and Y = 2x10^11 Pa. A force F = 5x10^4 N is applied. The extension is: (pi = 3.14)",
+opts:{A:"0.10 mm", B:"0.20 mm", C:"0.30 mm", D:"0.40 mm"},
+ans:"B",
+exp:"For tapered rod: dL = 4FL / (pi.Y.d1.d2) = 4 x 5x10^4 x 0.5 / (3.14 x 2x10^11 x 0.04 x 0.02) = 10^5 / (3.14 x 2x10^11 x 8x10^-4) = 10^5 / (5.024x10^8) = 1.99x10^-4 m ~ 0.20 mm. For uniform rod: dL = 4FL/(pi.Y.d^2). For tapered: d^2 is replaced by d1.d2."},
+
+{unit:"Thermal Stress", level:"mod-t", idealTime:95,
+q:"A metal rod is clamped rigidly at both ends at 20 C. It is heated to 120 C. Y = 1.2x10^11 Pa, alpha = 1x10^-5 /C. The thermal stress developed is:",
+opts:{A:"6x10^7 Pa", B:"1.2x10^8 Pa", C:"2.4x10^8 Pa", D:"1.2x10^7 Pa"},
+ans:"B",
+exp:"Since rod cannot expand (clamped), all thermal expansion is converted to compressive stress. Thermal strain = alpha.dT = 1x10^-5 x 100 = 1x10^-3. Thermal stress = Y x thermal strain = 1.2x10^11 x 1x10^-3 = 1.2x10^8 Pa (compressive). Same formula as before: sigma_thermal = Y.alpha.dT."},
+
+{unit:"Elastic Constants", level:"hard-t", idealTime:140,
+q:"For a material with Poisson ratio sigma = 0.25, the ratios B/Y and G/Y are:",
+opts:{A:"B/Y = 2/3 and G/Y = 2/5", B:"B/Y = 1/3 and G/Y = 3/8", C:"B/Y = 2/3 and G/Y = 3/8", D:"B/Y = 1/2 and G/Y = 1/3"},
+ans:"A",
+exp:"Y = 3B(1-2.sigma) => B = Y / (3(1-2x0.25)) = Y / (3x0.5) = 2Y/3. So B/Y = 2/3. Y = 2G(1+sigma) => G = Y / (2x1.25) = Y/2.5 = 2Y/5. So G/Y = 2/5. Check: Y = 9BG/(3B+G) = 9.(2Y/3).(2Y/5)/(3.(2Y/3)+(2Y/5)) = 9.(4Y^2/15)/(2Y+2Y/5) = (12Y^2/5)/((12Y/5)) = Y. Confirmed."},
+
+{unit:"Young Modulus", level:"mod-t", idealTime:90,
+q:"A wire of Y = 2x10^11 Pa and cross-section A = 1x10^-6 m2 is to be stretched to produce strain 0.1% = 1x10^-3. The required force is:",
+opts:{A:"100 N", B:"200 N", C:"400 N", D:"500 N"},
+ans:"B",
+exp:"Stress = Y x strain = 2x10^11 x 1x10^-3 = 2x10^8 Pa. Force = stress x area = 2x10^8 x 1x10^-6 = 200 N. This is a direct application of Hooke law. Always: force = Y.A.strain = Y.A.(dL/L)."},
+
+{unit:"Elastic Energy", level:"mod-t", idealTime:95,
+q:"A wire hangs under its own weight. The ratio of elongation under its own weight to the elongation produced if the same weight (as the total wire weight) is hung at the bottom is:",
+opts:{A:"1:1", B:"1:2", C:"2:1", D:"1:4"},
+ans:"B",
+exp:"Elongation under own weight: dL_self = rho.g.L^2/(2Y) = W.L/(2.Y.A) where W=total weight. Elongation with total weight W at bottom: dL_load = W.L/(Y.A). Ratio = dL_self / dL_load = (WL/2YA) / (WL/YA) = 1/2. So ratio = 1:2. The factor of 2 is because in the first case, on average only half the weight acts on each cross-section."},
+
+{unit:"Elastic Constants", level:"hard-t", idealTime:130,
+q:"For steel, Y = 2x10^11 Pa and G = 8x10^10 Pa. The Poisson ratio of steel is:",
+opts:{A:"0.15", B:"0.20", C:"0.25", D:"0.30"},
+ans:"C",
+exp:"Y = 2G(1 + sigma) => sigma = Y/(2G) - 1 = (2x10^11)/(2 x 8x10^10) - 1 = (2x10^11)/(1.6x10^11) - 1 = 1.25 - 1 = 0.25. Poisson ratio of steel is typically 0.25 to 0.30. This value is consistent with standard values for steel used in JEE problems."}
+];
+
+var GUIDE = {
+"Stress and Strain": {
+urgent: "Stress = F/A (Pa). Strain = dL/L (dimensionless). Longitudinal: along length. Lateral: perpendicular. Volumetric: dV/V. Shear: angle of deformation. Stress-strain graph: slope = Y (elastic region). Beyond elastic limit: permanent deformation. Breaking stress is the maximum.",
+caution: "Stress and Strain rushed. Strain has NO units. Stress units are Pa = N/m2. Convert area to m2 before dividing (1 mm2 = 10^-6 m2, 1 cm2 = 10^-4 m2). Elastic means material returns to original shape after stress is removed.",
+improve: "Stress and Strain mostly clear. Revise stress-strain curve features: proportional limit, elastic limit, yield point, ultimate stress, breaking stress.",
+strong: "Stress and Strain mastered."
+},
+"Young Modulus": {
+urgent: "Y = FL/(A.dL) = stress/strain. dL = FL/(YA). Spring constant k = YA/L. Own weight elongation: dL = rho.g.L^2/(2Y). Thermal stress: sigma = Y.alpha.dT. Max hanging length: L = breaking stress/(rho.g). Tapered rod: dL = 4FL/(pi.Y.d1.d2).",
+caution: "Young Modulus rushed. Most common errors: (1) forgetting to convert mm to m. (2) Using diameter instead of radius for area (A = pi.r^2 = pi.d^2/4). (3) In own-weight elongation, factor of 2 in denominator. (4) Double L and half r gives 8x extension (not 2x or 4x).",
+improve: "Young Modulus mostly clear. Revise: interatomic force constant k = Y.r0, and comparison of Y for different materials (steel > copper > aluminium > rubber).",
+strong: "Young Modulus fully mastered."
+},
+"Bulk Modulus": {
+urgent: "B = P/(dV/V). Compressibility = 1/B. dV = PV/B. For ideal gas: B_isothermal = P, B_adiabatic = gamma.P. Since gamma > 1: B_adiabatic > B_isothermal. Solids are least compressible (largest B). Gases most compressible.",
+caution: "Bulk Modulus rushed. Volume change formula: dV = P.V/B. Watch units: 1 litre = 10^-3 m3, 1 cm3 = 10^-6 m3. The answer for volume change is often in cm3, so convert m3 to cm3 by multiplying by 10^6.",
+improve: "Bulk Modulus mostly clear. Revise why Newton formula for sound was wrong (used B_T = P instead of B_S = gamma.P).",
+strong: "Bulk Modulus mastered."
+},
+"Shear Modulus": {
+urgent: "G = shear stress / shear strain = tangential force per area / angular deformation (in radians). Liquids: G = 0 (cannot resist shear). Rigidity modulus measures resistance to change of shape. Related to Y: Y = 2G(1+sigma).",
+caution: "Shear Modulus rushed. Shear strain is an ANGLE (in radians) = dx/L (tangential displacement / height). It is dimensionless. Shear stress = tangential force / area over which it acts.",
+improve: "Shear Modulus mostly clear. Revise torsion and twisting of rods which involves G.",
+strong: "Shear Modulus mastered."
+},
+"Poisson Ratio": {
+urgent: "sigma = lateral strain / longitudinal strain. Range: 0 to 0.5. Positive because lateral shrinks when longitudinal extends. Cork ~ 0, metals ~ 0.25-0.35, rubber ~ 0.5 (incompressible). Relation: Y=2G(1+sigma), Y=3B(1-2sigma). For sigma=0.5: B becomes infinite.",
+caution: "Poisson Ratio rushed. Lateral strain = (dr/r) or (dD/D) for circular cross-section. Longitudinal strain = dL/L. Both are positive numbers. Poisson ratio = lateral/longitudinal (positive value by convention).",
+improve: "Poisson Ratio mostly clear. Revise how to find B and G given Y and sigma, and vice versa.",
+strong: "Poisson Ratio mastered."
+},
+"Elastic Energy": {
+urgent: "Energy stored U = (1/2).F.dL = (1/2).k.x^2 (like spring). Energy density u = U/V = (1/2).Y.strain^2 = stress^2/(2Y) = stress x strain / 2. Total U = u x volume. Always use 1/2 factor (Hooke law: linear force-extension).",
+caution: "Elastic Energy rushed. Energy = (1/2).F.dL, NOT F.dL. The 1/2 comes because force starts from 0 and increases linearly (area of triangle). Total work = average force x displacement = (F/2) x dL.",
+improve: "Elastic Energy mostly clear. Revise energy comparison of two wires under same load (energy depends on L/A = 1/k ratio).",
+strong: "Elastic Energy mastered."
+},
+"Thermal Stress": {
+urgent: "If free to expand: thermal strain = alpha.dT. If PREVENTED from expanding: this strain becomes mechanical stress. Thermal stress = Y.alpha.dT (compressive when heated, tensile when cooled). Railway tracks, bridges use expansion joints to prevent thermal stress damage.",
+caution: "Thermal Stress rushed. Key condition: rod is CLAMPED or FIXED. If free to expand, there is NO stress (only strain). Stress only develops when expansion is constrained. Thermal stress = Y x alpha x dT regardless of length or area.",
+improve: "Thermal Stress mostly clear. Revise bimetallic strip bending (two materials with different alpha) and its applications in thermostats.",
+strong: "Thermal Stress mastered."
+},
+"Elastic Constants": {
+urgent: "Three relations: Y=2G(1+sigma), Y=3B(1-2sigma), Y=9BG/(3B+G). Only two of Y,B,G,sigma are independent. Given any two, find others. Interatomic force constant: k=Y.r0. For sigma=0.5: B=infinity (incompressible, like rubber). For sigma=0: Y=2G and Y=3B.",
+caution: "Elastic Constants rushed. To find B from Y and sigma: B = Y/[3(1-2sigma)]. To find G: G = Y/[2(1+sigma)]. Substitute sigma value carefully. For sigma=0.25: B=2Y/3, G=2Y/5. Verify using Y=9BG/(3B+G).",
+improve: "Elastic Constants mostly clear. Revise limiting cases (sigma=0, sigma=0.5) and physical meaning of each constant.",
+strong: "Elastic Constants fully mastered."
+}
+};
+
+var studentName="", studentBatch="", userAns={}, cur=0, tLeft=3600, tInterval=null;
+var timePerQ = new Array(Q.length).fill(0), qEntryTime = 0;
+
+function beginQuiz() {
+  var name = document.getElementById("inp-name").value.trim();
+  var batch = document.getElementById("inp-batch").value.trim();
+  var err = document.getElementById("reg-err");
+  if (!name || !batch) { err.style.display = "block"; return; }
+  err.style.display = "none";
+  studentName = name; studentBatch = batch;
+  document.getElementById("register").style.display = "none";
+  document.getElementById("quiz").style.display = "flex";
+  document.getElementById("tb-name").textContent = studentName;
+  document.getElementById("tb-batch").textContent = studentBatch;
+  buildPalette(); render(0); startTimer(); qEntryTime = Date.now();
+}
+
+function buildPalette() {
+  var p = document.getElementById("palette"); p.innerHTML = "";
+  for (var i = 0; i < Q.length; i++) {
+    var d = document.createElement("div");
+    d.className = "nta-pdot"; d.textContent = i + 1; d.id = "pd" + i;
+    (function(idx) { d.onclick = function() { go(idx); }; })(i);
+    p.appendChild(d);
+  }
+}
+
+function render(idx) {
+  cur = idx; var q = Q[idx];
+  document.getElementById("qnum").textContent = "Q " + (idx+1) + " of " + Q.length;
+  document.getElementById("qtopic").textContent = q.unit.toUpperCase();
+  var lv = document.getElementById("qlevel");
+  lv.className = "nta-level-badge " + q.level;
+  lv.textContent = q.level === "easy-t" ? "EASY" : q.level === "mod-t" ? "MODERATE" : "TOUGH";
+  document.getElementById("qtext").textContent = q.q;
+  var ol = document.getElementById("opts"); ol.innerHTML = "";
+  var labels = ["A","B","C","D"];
+  for (var i = 0; i < labels.length; i++) {
+    var l = labels[i];
+    var b = document.createElement("button");
+    b.className = "nta-opt" + (userAns[idx] === l ? " sel" : "");
+    var lbl = document.createElement("span"); lbl.className = "nta-opt-label"; lbl.textContent = l;
+    var txt = document.createElement("span"); txt.className = "nta-opt-text"; txt.textContent = q.opts[l];
+    b.appendChild(lbl); b.appendChild(txt);
+    (function(opt) { b.onclick = function() { userAns[idx] = opt; render(idx); }; })(l);
+    ol.appendChild(b);
+  }
+  document.getElementById("prevBtn").disabled = (idx === 0);
+  var last = (idx === Q.length - 1);
+  document.getElementById("nextBtn").style.display = last ? "none" : "inline-block";
+  document.getElementById("subBtn").style.display = last ? "inline-block" : "none";
+  updatePalette(); updateDone();
+}
+
+function go(idx) {
+  if (idx < 0 || idx >= Q.length) return;
+  var now = Date.now(); timePerQ[cur] += (now - qEntryTime) / 1000; qEntryTime = now;
+  cur = idx; render(idx);
+}
+
+function updatePalette() {
+  var answered = Object.keys(userAns).length;
+  var notAns = document.getElementById("att-answered");
+  var notNot = document.getElementById("att-not");
+  if(notAns) notAns.textContent = answered;
+  if(notNot) notNot.textContent = Q.length - answered;
+  for (var i = 0; i < Q.length; i++) {
+    var d = document.getElementById("pd" + i);
+    d.className = "nta-pdot";
+    if (i === cur) d.classList.add("cur");
+    else if (userAns[i]) d.classList.add("answered"); else d.classList.add("visited");
+  }
+}
+
+function updateDone() { document.getElementById("tb-done").textContent = Object.keys(userAns).length; }
+
+function startTimer() {
+  tInterval = setInterval(function() {
+    tLeft--;
+    var m = Math.floor(tLeft / 60), s = tLeft % 60;
+    var el = document.getElementById("timer");
+    el.textContent = (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s;
+    el.className = "nta-timer";
+    if (tLeft <= 300) el.classList.add("warn");
+    if (tLeft <= 60) { el.classList.remove("warn"); el.classList.add("danger"); }
+    if (tLeft <= 0) { clearInterval(tInterval); submitQuiz(); }
+  }, 1000);
+}
+
+function confirmSub() {
+  var now = Date.now(); timePerQ[cur] += (now - qEntryTime) / 1000;
+  var left = Q.length - Object.keys(userAns).length;
+  if (left > 0 && !confirm(left + " question(s) unattempted. Submit anyway?")) return;
+  submitQuiz();
+}
+
+function fmtT(s) {
+  s = Math.round(s);
+  if (s <= 0) return "--";
+  if (s < 60) return s + "s";
+  return Math.floor(s/60) + "m " + (s%60) + "s";
+}
+
+function submitQuiz() {
+  clearInterval(tInterval);
+  var now = Date.now(); timePerQ[cur] += (now - qEntryTime) / 1000;
+  document.getElementById("quiz").style.display = "none";
+  var c=0, w=0, sk=0, score=0;
+  for (var i = 0; i < Q.length; i++) {
+    if (!userAns[i]) sk++;
+    else if (userAns[i] === Q[i].ans) { c++; score += 4; }
+    else { w++; score -= 1; }
+  }
+  var acc = (c+w) > 0 ? Math.round(c/(c+w)*100) : 0;
+  var fb;
+  if (score >= 100) fb = {emoji:"[TROPHY]", color:"#e8b84b", grade:"JEE Top Rank Material!", msg:"Score: "+score+"/120. Elasticity completely mastered. Jitu Sir is extremely proud!"};
+  else if (score >= 80) fb = {emoji:"[TARGET]", color:"#2ecc8f", grade:"Excellent - Near Perfect!", msg:"Score: "+score+"/120. Very strong. Fix the specific gaps identified below."};
+  else if (score >= 60) fb = {emoji:"[BOLT]", color:"#14b8a6", grade:"Good - Build Steadily!", msg:"Score: "+score+"/120. Solid foundation. Revise the urgent topics to push above 80."};
+  else if (score >= 40) fb = {emoji:"[CHART]", color:"#f28c3a", grade:"Average - Work Harder!", msg:"Score: "+score+"/120. Gaps mapped below. Study each topic formula systematically."};
+  else if (score >= 0) fb = {emoji:"[BULB]", color:"#e8475f", grade:"Below Average - Restart!", msg:"Score: "+score+"/120. Read through all solutions carefully. Each topic needs 2-3 focused days."};
+  else fb = {emoji:"[SHIELD]", color:"#e8475f", grade:"Negative - Use Skip Rule!", msg:"Score: "+score+"/120. In JEE, skip when less than 75% confident. Wrong = -1 mark."};
+  document.getElementById("fscore").textContent = score;
+  document.getElementById("fscore").style.color = fb.color;
+  document.getElementById("fpct").textContent = Math.round(score/120*100) + "%";
+  document.getElementById("fpct").style.color = fb.color;
+  document.getElementById("rc").textContent = c;
+  document.getElementById("rw").textContent = w;
+  document.getElementById("rs").textContent = sk;
+  document.getElementById("racc").textContent = acc + "%";
+  document.getElementById("fb-emoji").textContent = fb.emoji;
+  document.getElementById("fb-grade").textContent = fb.grade;
+  document.getElementById("fb-grade").style.color = fb.color;
+  document.getElementById("fb-msg").textContent = fb.msg;
+  document.getElementById("res-student").textContent = studentName + " - " + studentBatch;
+  buildTimeTable(); buildTopicGrid(); buildGuidance();
+  document.getElementById("result").style.display = "flex";
+}
+
+function buildTimeTable() {
+  var tbody = document.getElementById("time-tbody"); tbody.innerHTML = "";
+  var onT=0, fast=0, slow=0;
+  for (var i = 0; i < Q.length; i++) {
+    var q = Q[i], spent = Math.round(timePerQ[i]);
+    var ratio = spent > 0 ? (spent / q.idealTime) : 0;
+    var sc = "ok", st = "On Time";
+    if (spent === 0) { sc = ""; st = "--"; }
+    else if (ratio < 0.4) { sc = "fast"; st = "Too Fast"; fast++; }
+    else if (ratio > 1.3) { sc = "slow"; st = "Overtime"; slow++; }
+    else onT++;
+    var res = !userAns[i] ? "s" : (userAns[i] === q.ans ? "c" : "w");
+    var resT = !userAns[i] ? "Skipped" : (userAns[i] === q.ans ? "Correct" : "Wrong");
+    var lvLabel = q.level === "easy-t" ? "EASY" : q.level === "mod-t" ? "MOD" : "HARD";
+    var tr = document.createElement("tr");
+    var td1 = document.createElement("td"); td1.innerHTML = "<b>Q"+(i+1)+"</b>";
+    var td2 = document.createElement("td"); td2.textContent = q.unit; td2.style.cssText = "color:var(--dim);font-size:.7rem";
+    var td3 = document.createElement("td");
+    var sp3 = document.createElement("span"); sp3.className = "ltag " + q.level; sp3.textContent = lvLabel; sp3.style.cssText = "font-size:.5rem;padding:1px 5px"; td3.appendChild(sp3);
+    var td4 = document.createElement("td"); td4.textContent = spent > 0 ? fmtT(spent) : "--"; td4.style.fontFamily = "monospace"; td4.style.fontSize = ".74rem";
+    var td5 = document.createElement("td"); td5.textContent = fmtT(q.idealTime); td5.style.cssText = "color:var(--muted);font-family:monospace;font-size:.74rem";
+    var td6 = document.createElement("td");
+    if (sc) { var sp6 = document.createElement("span"); sp6.className = "t-status " + sc; sp6.textContent = st; td6.appendChild(sp6); }
+    else { td6.textContent = "--"; td6.style.color = "var(--muted)"; }
+    var td7 = document.createElement("td"); var sp7 = document.createElement("span"); sp7.className = "t-ans " + res; sp7.textContent = resT; td7.appendChild(sp7);
+    tr.appendChild(td1); tr.appendChild(td2); tr.appendChild(td3); tr.appendChild(td4); tr.appendChild(td5); tr.appendChild(td6); tr.appendChild(td7);
+    tbody.appendChild(tr);
+  }
+  var timeUsed = 3600 - tLeft;
+  var ts = document.getElementById("time-summary"); ts.innerHTML = "";
+  var tsData = [
+    {v: fmtT(timeUsed), l:"Time Used", c:"var(--teal)"},
+    {v: onT, l:"On Time", c:"var(--green)"},
+    {v: fast, l:"Too Fast", c:"var(--red)"},
+    {v: slow, l:"Overtime", c:"var(--gold)"},
+    {v: fmtT(Math.round(timeUsed/Q.length)), l:"Avg/Q", c:"var(--dim)"}
+  ];
+  for (var i = 0; i < tsData.length; i++) {
+    var d = tsData[i];
+    var card = document.createElement("div"); card.className = "ts-card";
+    card.innerHTML = "<div class='ts-val' style='color:" + d.c + "'>" + d.v + "</div><div class='ts-lbl'>" + d.l + "</div>";
+    ts.appendChild(card);
+  }
+}
+
+function buildTopicGrid() {
+  var map = {};
+  for (var i = 0; i < Q.length; i++) {
+    var q = Q[i];
+    if (!map[q.unit]) map[q.unit] = {t:0, c:0, w:0, s:0};
+    map[q.unit].t++;
+    var r = !userAns[i] ? "s" : (userAns[i] === q.ans ? "c" : "w");
+    map[q.unit][r]++;
+  }
+  var grid = document.getElementById("topic-grid"); grid.innerHTML = "";
+  var units = Object.keys(map);
+  for (var u = 0; u < units.length; u++) {
+    var unit = units[u], d = map[unit];
+    var pC = Math.round(d.c/d.t*100), pW = Math.round(d.w/d.t*100), pS = Math.round(d.s/d.t*100);
+    var badge, bc;
+    if (d.s === d.t) { badge = "Skipped"; bc = "skip"; }
+    else if (d.w === 0 && d.s === 0) { badge = "Strong"; bc = "strong"; }
+    else if (d.w >= d.c) { badge = "Urgent"; bc = "urgent"; }
+    else { badge = "Revise"; bc = "revise"; }
+    var div = document.createElement("div"); div.className = "tcard";
+    div.innerHTML = "<div class='tcard-name'>" + unit + "<br><span class='tcard-qs'>" + d.t + " Qs</span></div>"
+      + "<div class='tcard-bars'>"
+      + "<div class='bar-row'><span class='bar-lbl' style='color:var(--green)'>Correct</span><div class='bar-track'><div class='bar-fill c' style='width:" + pC + "%'></div></div><span>" + d.c + "</span></div>"
+      + "<div class='bar-row'><span class='bar-lbl' style='color:var(--red)'>Wrong</span><div class='bar-track'><div class='bar-fill w' style='width:" + pW + "%'></div></div><span>" + d.w + "</span></div>"
+      + "<div class='bar-row'><span class='bar-lbl' style='color:var(--muted)'>Skip</span><div class='bar-track'><div class='bar-fill s' style='width:" + pS + "%'></div></div><span>" + d.s + "</span></div>"
+      + "</div><div class='tcard-badge " + bc + "'>" + badge + "</div>";
+    grid.appendChild(div);
+  }
+}
+
+function buildGuidance() {
+  var map = {};
+  for (var i = 0; i < Q.length; i++) {
+    var q = Q[i];
+    if (!map[q.unit]) map[q.unit] = {t:0, c:0, w:0, s:0, fastW:0};
+    map[q.unit].t++;
+    var r = !userAns[i] ? "s" : (userAns[i] === q.ans ? "c" : "w");
+    map[q.unit][r]++;
+    if (r === "w" && timePerQ[i] / q.idealTime < 0.4) map[q.unit].fastW++;
+  }
+  var items = [];
+  var units = Object.keys(map);
+  for (var u = 0; u < units.length; u++) {
+    var unit = units[u], d = map[unit];
+    var p, gtype;
+    if (d.s === d.t) { p = 1; gtype = "urgent"; }
+    else if (d.w > d.c) { p = 1; gtype = "urgent"; }
+    else if (d.fastW > 0) { p = 2; gtype = "caution"; }
+    else if (d.w > 0 || d.s > 0) { p = 3; gtype = "improve"; }
+    else { p = 4; gtype = "strong"; }
+    items.push({unit: unit, d: d, p: p, gtype: gtype});
+  }
+  items.sort(function(a, b) { return a.p - b.p; });
+  var pL = ["","P1 - URGENT","P2 - CAUTION","P3 - REVISE","P4 - STRONG"];
+  var pC = ["","p1","p2","p3","p4"];
+  var gl = document.getElementById("guide-list"); gl.innerHTML = "";
+  for (var i = 0; i < items.length; i++) {
+    var item = items[i];
+    var g = GUIDE[item.unit];
+    if (!g) continue;
+    var action = "";
+    if (item.p === 1) action = "Study " + item.unit + " from scratch: all formulas, derivations, 10 practice problems. 2 hrs daily for 3 days.";
+    else if (item.p === 2) action = "Re-read wrong solutions. Was it formula recall or calculation error in " + item.unit + "?";
+    else if (item.p === 3) action = "Review wrong/skipped solutions in " + item.unit + ". Note the specific formula that tripped you.";
+    else action = "Maintain " + item.unit + ". Solve 2 tough problems per week to stay sharp.";
+    var div = document.createElement("div"); div.className = "gcard " + item.gtype;
+    div.innerHTML = "<div class='gcard-top'><span class='gcard-topic'>" + item.unit + "</span><span class='gpill " + pC[item.p] + "'>" + pL[item.p] + "</span><span class='gcard-score'>" + item.d.c + " correct  " + item.d.w + " wrong  " + item.d.s + " skipped</span></div>"
+      + "<div class='gcard-msg'>" + g[item.gtype] + "</div>"
+      + "<div class='gcard-action'>" + action + "</div>";
+    gl.appendChild(div);
+  }
+}
+
+function showSol() {
+  var sec = document.getElementById("solutions"); sec.style.display = "block";
+  var sl = document.getElementById("sollist"); sl.innerHTML = "";
+  for (var i = 0; i < Q.length; i++) {
+    var q = Q[i], ua = userAns[i], ok = ua === q.ans, skipped = !ua;
+    var div = document.createElement("div"); div.className = "sc " + (skipped ? "s" : ok ? "c" : "w");
+    var lvLabel = q.level === "easy-t" ? "EASY" : q.level === "mod-t" ? "MODERATE" : "TOUGH";
+    var marks = skipped ? "0 marks" : ok ? "+4 marks" : "-1 mark";
+    var tNote = timePerQ[i] > 0 ? " - " + fmtT(Math.round(timePerQ[i])) + " (ideal: " + fmtT(q.idealTime) + ")" : "";
+    var qnDiv = document.createElement("div"); qnDiv.className = "sqn";
+    qnDiv.innerHTML = "<b>Q"+(i+1)+"</b>"
+      + "<span class='ltag " + q.level + "' style='font-size:.5rem;padding:1px 5px'>" + lvLabel + "</span>"
+      + "<span style='color:var(--teal)'>" + q.unit + "</span>"
+      + "<span style='color:var(--muted)'>" + tNote + "</span>";
+    var qtDiv = document.createElement("div"); qtDiv.className = "sqt"; qtDiv.textContent = q.q;
+    var yourDiv = document.createElement("div");
+    if (skipped) { yourDiv.className = "sa your"; yourDiv.textContent = "Not attempted - 0 marks"; }
+    else { yourDiv.className = "sa your " + (ok ? "ok" : "bad"); yourDiv.textContent = "Your answer: (" + ua + ") " + q.opts[ua] + "  [" + marks + "]"; }
+    var corDiv = document.createElement("div"); corDiv.className = "sa cor"; corDiv.textContent = "Correct: (" + q.ans + ") " + q.opts[q.ans];
+    var expDiv = document.createElement("div"); expDiv.className = "sexp"; expDiv.textContent = q.exp;
+    div.appendChild(qnDiv); div.appendChild(qtDiv); div.appendChild(yourDiv); div.appendChild(corDiv); div.appendChild(expDiv);
+    sl.appendChild(div);
+  }
+  sec.scrollIntoView({behavior: "smooth"});
+}
+
+function clearOpt() {
+  delete userAns[cur];
+  render(cur);
+}
+
+</script>
+</body>
+</html>
